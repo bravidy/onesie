@@ -25,13 +25,15 @@
 		<div class="site-branding">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			<a class="btn btn-default btn-big" href="#">Take Action</a>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h1 class="menu-toggle"><?php _e( 'Menu', 'onesie' ); ?></h1>
-			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'onesie' ); ?></a>
-
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<ul>
+				<li><a href="#portfolio"><?php _e( 'Portfolio', 'onesie' ); ?></a></li>
+				<li><a href="#about"><?php _e( 'About', 'onesie' ); ?></a></li>
+				<li><a href="#contact"><?php _e( 'Contact', 'onesie' ); ?></a></li>
+			</ul>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

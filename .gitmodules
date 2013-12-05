@@ -1,0 +1,3 @@
+[submodule "options"]
+	path = options
+	url = https://github.com/graphpaperpress/gpp-theme-options.git

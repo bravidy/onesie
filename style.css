@@ -22,7 +22,6 @@ along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normali
 and Blueprint http://www.blueprintcss.org/
 */
 
-
 /* =Reset
 -------------------------------------------------------------- */
 
@@ -401,15 +400,20 @@ a:active {
 ----------------------------------------------- */
 
 .main-navigation {
+	position: fixed;
+	top: 0;
+	left: 0;
 	clear: both;
 	display: block;
 	float: left;
 	width: 100%;
+	background: rgba(0, 0, 0, 0.2);
 }
 .main-navigation ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+	float: right;
 }
 .main-navigation li {
 	float: left;
@@ -418,6 +422,7 @@ a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	padding: 1em;
 }
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -615,4 +620,32 @@ object {
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
 	display: block;
+}
+
+
+/* =Onesie
+---------------------------------------------- */
+
+body.custom-background {
+	background-size: cover;
+}
+.site {
+	width: 90%;
+	margin: 0 auto;
+	padding: 5%;
+}
+.site-header {
+	text-align: center;
+}
+.site-header:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	margin-right: -0.25em; /* Adjusts for spacing */
+}
+.site-branding {
+	display: inline-block;
+	vertical-align: middle;
+	width: 50%
 }

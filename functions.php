@@ -77,6 +77,10 @@ add_action( 'widgets_init', 'onesie_widgets_init' );
  */
 function onesie_scripts() {
 	wp_enqueue_style( 'onesie-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'onesie-bootstrap-style', get_template_directory_uri() . '/css/bootstrap.css', array( 'onesie-style' ), '20131204', 'all' );
+	wp_enqueue_style( 'onesie-bootstrap-theme-style', get_template_directory_uri() . '/css/bootstrap-theme.css', array( 'onesie-style', 'onesie-bootstrap-style' ), '20131204', 'all' );
+
+	wp_enqueue_script( 'onesie-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '20131209', true );
 
 	wp_enqueue_script( 'onesie-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -112,3 +116,13 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load theme options
+ */
+require get_template_directory() . '/options/options.php';
+
+/**
+ * Load theme options
+ */
+require get_template_directory() . '/theme-options.php';
