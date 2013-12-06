@@ -662,9 +662,6 @@ body.custom-background {
 .block {
 	padding: 80px 0;
 }
-.block p {
-	font-size: 1.6em;
-}
 .gallery {
 	list-style: none;
 	padding: 0;
@@ -674,12 +671,27 @@ body.custom-background {
 	float: left;
 	width: 30%;
 	margin: 0 5% 5% 0;
+	padding: 10px;
+	background: rgba( 0, 0, 0, .2 );
+}
+.gallery li:hover {
+	background: rgba( 0, 0, 0, .4 );
+}
+.gallery li h6 {
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 1px;
 }
 .gallery li:nth-child(3n+0) {
 	margin-right: 0;
 }
 .gallery li:nth-child(3n+1) {
 	clear: left;
+}
+.gallery li img {
+	clear: both;
+	display: block;
+	margin: 0 auto;
 }
 .site-footer {
 	margin-bottom: 40px;

@@ -37,8 +37,11 @@ $options = get_option( gpp_get_current_theme_id() . '_options' ); ?>
 				?>
 					<li>
 						<a href="<?php echo $attachment_attributes[0] ?>"<?php if ( ! empty( $attachment_title ) ) { ?> title="<?php echo $attachment_title; ?><?php if ( ! empty( $attachment_caption ) ) { ?> <small><?php echo $attachment_caption; ?></small><?php } ?><?php if ( ! empty( $attachment_link ) ) { ?> <small><?php echo esc_url( $attachment_link ); ?></small><?php } ?>"<?php } ?> class="gallery-item">
-							<?php echo wp_get_attachment_image( $id, "medium", 0 ); ?>
+							<?php echo wp_get_attachment_image( $id, "medium" ); ?>
 						</a>
+						<?php if ( ! empty( $attachment_title ) ) { ?><h6><?php echo $attachment_title; ?></h6><?php } ?>
+						<?php if ( ! empty( $attachment_caption ) ) { ?><p class="text-muted"><small><?php echo $attachment_caption; ?></small></p><?php } ?>
+						<?php if ( ! empty( $attachment_link ) ) { ?><p class="text-muted"><small><?php _e( 'Visit', 'onesie' ); ?>: <a href="<?php echo esc_url( $attachment_link ); ?>" title="<?php echo $attachment_title; ?>"><?php echo esc_url( $attachment_link ); ?></a></small></p><?php } ?>
 					</li>
 				<?php } ?>
 
@@ -48,14 +51,14 @@ $options = get_option( gpp_get_current_theme_id() . '_options' ); ?>
 		<?php if ( ! empty( $options['about'] ) ) : ?>
 			<section id="about" class="block">
 				<h2 class="section-title"><?php _e( 'About', 'onesie' ); ?></h2>
-					<p><?php echo stripslashes_deep( $options['about'] ); ?></p>
+					<p class="lead"><?php echo stripslashes_deep( $options['about'] ); ?></p>
 			</section>
 		<?php endif; ?>
 		
 		<?php if ( ! empty( $options['contact'] ) ) : ?>
 			<section id="contact" class="block">
 				<h2 class="section-title"><?php _e( 'Contact', 'onesie' ); ?></h2>
-					<p><?php echo stripslashes_deep( $options['contact'] ); ?></p>
+					<p class="lead"><?php echo stripslashes_deep( $options['contact'] ); ?></p>
 			</section>
 		<?php endif; ?>
 
