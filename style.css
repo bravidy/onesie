@@ -314,15 +314,15 @@ textarea {
 
 /* Links */
 a {
-	color: royalblue;
+	color: #ffffff;
 }
 a:visited {
-	color: purple;
+	color: #ffffff;
 }
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #f23e2f;
 }
 
 /* Alignment */
@@ -408,6 +408,7 @@ a:active {
 	float: left;
 	width: 100%;
 	background: rgba(0, 0, 0, 0.2);
+	text-transform: uppercase;
 }
 .main-navigation ul {
 	list-style: none;
@@ -632,7 +633,7 @@ body.custom-background {
 .site {
 	width: 90%;
 	margin: 0 auto;
-	padding: 5%;
+	padding: 0 5%;
 }
 .site-header {
 	text-align: center;
@@ -648,4 +649,38 @@ body.custom-background {
 	display: inline-block;
 	vertical-align: middle;
 	width: 50%
+}
+.site-header h1,
+.site-header h2,
+.site-header .btn {
+	margin-bottom: 40px;
+}
+.site-header h2 {
+	font-size: 1.5em;
+	line-height: 1.5;
+}
+.block {
+	padding: 80px 0;
+}
+.block p {
+	font-size: 1.6em;
+}
+.gallery {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.gallery li {
+	float: left;
+	width: 30%;
+	margin: 0 5% 5% 0;
+}
+.gallery li:nth-child(3n+0) {
+	margin-right: 0;
+}
+.gallery li:nth-child(3n+1) {
+	clear: left;
+}
+.site-footer {
+	margin-bottom: 40px;
 }

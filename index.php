@@ -11,26 +11,53 @@
  * @package onesie
  */
 
-get_header(); ?>
+get_header();
+$options = get_option( gpp_get_current_theme_id() . '_options' ); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+		<?php
+		$portfolios = $options['portfolio'];
+		if ( ! empty( $portfolios ) ) :
+		$images = explode( ',', $portfolios );
+		?>
 			<section id="portfolio" class="block">
-				<h2 class="section-title">Portfolio</h2>
-				<p></p>
-			</section>
+				<h2 class="section-title"><?php _e( 'Portfolio', 'onesie' ); ?></h2>
 
+				<ul class="gallery">
+
+				<?php 
+					foreach( $images as $id ) {
+
+						$attachment_caption = get_post_field( 'post_excerpt', $id );
+						$attachment_title = get_post_field( 'post_title', $id );
+						$attachment_link = get_post_meta( $id, '_gpp_custom_url', true );
+						$attachment_attributes = wp_get_attachment_image_src( $id, 'large' );
+				?>
+					<li>
+						<a href="<?php echo $attachment_attributes[0] ?>"<?php if ( ! empty( $attachment_title ) ) { ?> title="<?php echo $attachment_title; ?><?php if ( ! empty( $attachment_caption ) ) { ?> <small><?php echo $attachment_caption; ?></small><?php } ?><?php if ( ! empty( $attachment_link ) ) { ?> <small><?php echo esc_url( $attachment_link ); ?></small><?php } ?>"<?php } ?> class="gallery-item">
+							<?php echo wp_get_attachment_image( $id, "medium", 0 ); ?>
+						</a>
+					</li>
+				<?php } ?>
+
+			</section>
+		<?php endif; ?>
+
+		<?php if ( ! empty( $options['about'] ) ) : ?>
 			<section id="about" class="block">
-				<h2 class="section-title">About</h2>
-				<p></p>
+				<h2 class="section-title"><?php _e( 'About', 'onesie' ); ?></h2>
+					<p><?php echo stripslashes_deep( $options['about'] ); ?></p>
 			</section>
-			
+		<?php endif; ?>
+		
+		<?php if ( ! empty( $options['contact'] ) ) : ?>
 			<section id="contact" class="block">
-				<h2 class="section-title">Contact</h2>
-				<p></p>
+				<h2 class="section-title"><?php _e( 'Contact', 'onesie' ); ?></h2>
+					<p><?php echo stripslashes_deep( $options['contact'] ); ?></p>
 			</section>
-
+		<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

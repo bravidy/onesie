@@ -321,14 +321,14 @@ textarea {
 }
 
 a {
-  color: #ffffff;
+  color: #dddddd;
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: #2a6496;
-  text-decoration: underline;
+  color: #f23e2f;
+  text-decoration: none;
 }
 
 a:focus {
@@ -2493,6 +2493,47 @@ fieldset[disabled] .btn-success:active,
 .btn-success.disabled.active,
 .btn-success[disabled].active,
 fieldset[disabled] .btn-success.active {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.btn-translucent {
+  color: #ffffff;
+  background-color: rgba( 0, 0, 0, .2 );
+  border-color: rgba( 255, 255, 255, .7 );
+}
+
+.btn-translucent:hover,
+.btn-translucent:focus,
+.btn-translucent:active,
+.btn-translucent.active,
+.open .dropdown-toggle.btn-translucent {
+  color: #ffffff;
+  background-color: rgba( 0, 0, 0, .4 );
+  border-color: rgba( 255, 255, 255, .9 );
+}
+
+.btn-translucent:active,
+.btn-translucent.active,
+.open .dropdown-toggle.btn-translucent {
+  background-image: none;
+}
+
+.btn-translucent.disabled,
+.btn-translucent[disabled],
+fieldset[disabled] .btn-translucent,
+.btn-translucent.disabled:hover,
+.btn-translucent[disabled]:hover,
+fieldset[disabled] .btn-translucent:hover,
+.btn-translucent.disabled:focus,
+.btn-translucent[disabled]:focus,
+fieldset[disabled] .btn-translucent:focus,
+.btn-translucent.disabled:active,
+.btn-translucent[disabled]:active,
+fieldset[disabled] .btn-translucent:active,
+.btn-translucent.disabled.active,
+.btn-translucent[disabled].active,
+fieldset[disabled] .btn-translucent.active {
   background-color: #5cb85c;
   border-color: #4cae4c;
 }

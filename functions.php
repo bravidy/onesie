@@ -50,8 +50,8 @@ function onesie_setup() {
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'onesie_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
+		'default-color' => '000000',
+		'default-image' => get_template_directory_uri() . '/images/background-phone.jpg',
 	) ) );
 }
 endif; // onesie_setup
@@ -79,11 +79,11 @@ function onesie_scripts() {
 	wp_enqueue_style( 'onesie-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'onesie-bootstrap-style', get_template_directory_uri() . '/css/bootstrap.css', array( 'onesie-style' ), '20131204', 'all' );
 	wp_enqueue_style( 'onesie-bootstrap-theme-style', get_template_directory_uri() . '/css/bootstrap-theme.css', array( 'onesie-style', 'onesie-bootstrap-style' ), '20131204', 'all' );
+	wp_enqueue_style( 'onesie-magnific-popup-style', get_template_directory_uri() . '/css/magnific-popup.css', array( 'onesie-style' ), '20131204', 'all' );
 
-	wp_enqueue_script( 'onesie-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '20131209', true );
-
+	wp_enqueue_script( 'onesie-magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.js', array( 'jquery' ), '20131210', true );
+	wp_enqueue_script( 'onesie-scripts', get_template_directory_uri() . '/js/onesie.js', array( 'jquery', 'onesie-magnific-popup' ), '20131210', true );
 	wp_enqueue_script( 'onesie-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
 	wp_enqueue_script( 'onesie-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

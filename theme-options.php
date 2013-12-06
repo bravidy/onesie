@@ -98,6 +98,62 @@ $options = array(
         "default" => "Allan:400,700",
         "valid_options" => gpp_font_array()
     ),
+    'message' => array(
+        "tab" => "general_tab",
+        "name" => "message",
+        "title" => __( "Message", "gpp" ),
+        "description" => __( "Add a welcome message below your site title.", "gpp" ),
+        "section" => "general_section_1",
+        "since" => "1.0",
+        "id" => "general_section_1",
+        "type" => "textarea",
+        "default" => ""
+    ),
+    'button_link' => array(
+        "tab" => "general_tab",
+        "name" => "button_link",
+        "title" => __( "Button Link", "gpp" ),
+        "description" => __( "The url where your button links to.", "gpp" ),
+        "section" => "general_section_1",
+        "since" => "1.0",
+        "id" => "general_section_1",
+        "type" => "text",
+        "default" => site_url()
+    ),
+    'button_text' => array(
+        "tab" => "general_tab",
+        "name" => "button_text",
+        "title" => __( "Button Text", "gpp" ),
+        "description" => __( "The text appearing on your button.", "gpp" ),
+        "section" => "general_section_1",
+        "since" => "1.0",
+        "id" => "general_section_1",
+        "type" => "text",
+        "default" => ""
+    ),
+    "about" => array(
+        "tab" => "general_tab",
+        "name" => "about",
+        "title" => __( "About", "gpp" ),
+        "description" => __( "Add some information about yourself.", "gpp" ),
+        "section" => "general_section_1",
+        "since" => "1.0",
+        "id" => "general_section_1",
+        "type" => "textarea",
+        "sanitize" => "html",
+        "default" => ""
+    ),
+    'contact' => array(
+        "tab" => "general_tab",
+        "name" => "contact",
+        "title" => __( "Contact", "gpp" ),
+        "description" => __( "Your contact information", "gpp" ),
+        "section" => "general_section_1",
+        "since" => "1.0",
+        "id" => "general_section_1",
+        "type" => "textarea",
+        "default" => ""
+    ),
     'color' => array(
         "tab" => "colors_tab",
         "name" => "color",
