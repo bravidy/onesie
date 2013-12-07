@@ -409,6 +409,7 @@ a:active {
 	width: 100%;
 	background: rgba(0, 0, 0, 0.2);
 	text-transform: uppercase;
+	z-index: 1;
 }
 .main-navigation ul {
 	list-style: none;
@@ -658,6 +659,15 @@ body.custom-background {
 .site-header h2 {
 	font-size: 1.5em;
 	line-height: 1.5;
+}
+.site-title.fixed {
+	position: fixed;
+	top: 12px;
+	left: 1em;
+	z-index: 2;
+	font-size: 1.5em;
+	margin: 0;
+	padding: 0;
 }
 .block {
 	padding: 80px 0;
