@@ -545,7 +545,7 @@ a:active {
 .site-main .gallery a img {
 	border: none;
 	height: auto;
-	max-width: 90%;
+	max-width: 100%;
 }
 .site-main .gallery dd {
 	margin: 0;
@@ -668,19 +668,12 @@ body.custom-background {
 	margin: 0;
 }
 .gallery li {
+	display: inline-block;
+	position: relative;
 	float: left;
 	width: 30%;
 	margin: 0 5% 5% 0;
-	padding: 10px;
-	background: rgba( 0, 0, 0, .2 );
-}
-.gallery li:hover {
-	background: rgba( 0, 0, 0, .4 );
-}
-.gallery li h6 {
-	text-transform: uppercase;
-	font-weight: bold;
-	letter-spacing: 1px;
+	background: #ffffff;
 }
 .gallery li:nth-child(3n+0) {
 	margin-right: 0;
@@ -688,10 +681,36 @@ body.custom-background {
 .gallery li:nth-child(3n+1) {
 	clear: left;
 }
-.gallery li img {
-	clear: both;
-	display: block;
-	margin: 0 auto;
+.gallery figure img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.gallery figcaption {
+	padding: 1em;
+	position: relative;
+}
+.gallery figcaption h3 {
+    margin: 10px 0;
+    text-transform: uppercase;
+    font-size: 1em;
+    color: #222;
+}
+.gallery figcaption span {
+	font-size: .8em;
+	color: #999999;
+}
+.gallery figcaption .genericon {
+	position: absolute;
+	bottom: .5em;
+	right: .5em;
+	font-size: 20px;
+	width: 20px;
+	height: 20px;
+	color: #999999;
+}
+.gallery figcaption .genericon:hover {
+	color: #f23e2f;
 }
 .site-footer {
 	margin-bottom: 40px;

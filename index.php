@@ -36,12 +36,16 @@ $options = get_option( gpp_get_current_theme_id() . '_options' ); ?>
 						$attachment_attributes = wp_get_attachment_image_src( $id, 'large' );
 				?>
 					<li>
-						<a href="<?php echo $attachment_attributes[0] ?>"<?php if ( ! empty( $attachment_title ) ) { ?> title="<?php echo $attachment_title; ?><?php if ( ! empty( $attachment_caption ) ) { ?> <small><?php echo $attachment_caption; ?></small><?php } ?><?php if ( ! empty( $attachment_link ) ) { ?> <small><?php echo esc_url( $attachment_link ); ?></small><?php } ?>"<?php } ?> class="gallery-item">
-							<?php echo wp_get_attachment_image( $id, "medium" ); ?>
-						</a>
-						<?php if ( ! empty( $attachment_title ) ) { ?><h6><?php echo $attachment_title; ?></h6><?php } ?>
-						<?php if ( ! empty( $attachment_caption ) ) { ?><p class="text-muted"><small><?php echo $attachment_caption; ?></small></p><?php } ?>
-						<?php if ( ! empty( $attachment_link ) ) { ?><p class="text-muted"><small><?php _e( 'Visit', 'onesie' ); ?>: <a href="<?php echo esc_url( $attachment_link ); ?>" title="<?php echo $attachment_title; ?>"><?php echo esc_url( $attachment_link ); ?></a></small></p><?php } ?>
+						<figure>
+							<a href="<?php echo $attachment_attributes[0] ?>"<?php if ( ! empty( $attachment_title ) ) { ?> title="<?php echo $attachment_title; ?><?php if ( ! empty( $attachment_caption ) ) { ?> <small><?php echo $attachment_caption; ?></small><?php } ?><?php if ( ! empty( $attachment_link ) ) { ?> <small><?php echo esc_url( $attachment_link ); ?></small><?php } ?>"<?php } ?> class="gallery-item">
+								<?php echo wp_get_attachment_image( $id, "large" ); ?>
+							</a>
+							<figcaption>
+								<?php if ( ! empty( $attachment_title ) ) { ?><h3><?php echo $attachment_title; ?></h3><?php } ?>
+								<?php if ( ! empty( $attachment_caption ) ) { ?><span><?php echo $attachment_caption; ?></span><?php } ?>
+								<?php if ( ! empty( $attachment_link ) ) { ?><a href="<?php echo esc_url( $attachment_link ); ?>" title="<?php echo $attachment_title; ?>"><span class="genericon genericon-external"></span></a><?php } ?>
+							</figcaption>
+						</figure>
 					</li>
 				<?php } ?>
 

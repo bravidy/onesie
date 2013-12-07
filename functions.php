@@ -80,6 +80,7 @@ function onesie_scripts() {
 	wp_enqueue_style( 'onesie-bootstrap-style', get_template_directory_uri() . '/css/bootstrap.css', array( 'onesie-style' ), '20131204', 'all' );
 	wp_enqueue_style( 'onesie-bootstrap-theme-style', get_template_directory_uri() . '/css/bootstrap-theme.css', array( 'onesie-style', 'onesie-bootstrap-style' ), '20131204', 'all' );
 	wp_enqueue_style( 'onesie-magnific-popup-style', get_template_directory_uri() . '/css/magnific-popup.css', array( 'onesie-style' ), '20131204', 'all' );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', array( 'onesie-style' ), '20131204', 'all' );
 
 	wp_enqueue_script( 'onesie-magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.js', array( 'jquery' ), '20131210', true );
 	wp_enqueue_script( 'onesie-scripts', get_template_directory_uri() . '/js/onesie.js', array( 'jquery', 'onesie-magnific-popup' ), '20131210', true );
