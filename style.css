@@ -463,17 +463,6 @@ a:active {
 	display: none;
 }
 
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
-
-	.main-navigation ul {
-		display: none;
-	}
-}
-
 
 /* =Content
 ----------------------------------------------- */
@@ -630,6 +619,9 @@ object {
 
 body.custom-background {
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-attachment: fixed;
 }
 .site {
 	width: 90%;
@@ -660,17 +652,10 @@ body.custom-background {
 	font-size: 1.5em;
 	line-height: 1.5;
 }
-.site-title.fixed {
-	position: fixed;
-	top: 12px;
-	left: 1em;
-	z-index: 2;
-	font-size: 1.5em;
-	margin: 0;
-	padding: 0;
-}
 .block {
 	padding: 80px 0;
+	display: block;
+	clear: both;
 }
 .gallery {
 	list-style: none;
@@ -724,4 +709,31 @@ body.custom-background {
 }
 .site-footer {
 	margin-bottom: 40px;
+}
+#up {
+	float: right;
+	background: rgba( 0, 0, 0, .2 );
+	padding: 5px;
+	border-radius: 2px;
+	width: 26px;
+	height: 26px;
+}
+
+@media screen and (max-width: 600px) {
+	.block {
+		padding-top: 150px;
+	}
+	.site-branding {
+		width: 100%
+	}
+	.block {
+		height: auto !important;
+	}
+	.gallery li {
+		display: block;
+		position: relative;
+		float: none;
+		width: 100%;
+		margin: 0 auto 2em;
+	}
 }

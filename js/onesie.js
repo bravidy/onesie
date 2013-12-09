@@ -1,6 +1,15 @@
 jQuery(document).ready(function($){
+
+	if ($(window).width() < 600) {
+		$('body').addClass('mobile');
+	} else {
+		$('body').removeClass('mobile');
+	}
 	
 	var win_height = $(window).height() - 100;
+
+	if ( ! win_height )
+		return;
 	
 	$('.block').css({ height: win_height });
 
@@ -14,17 +23,6 @@ jQuery(document).ready(function($){
 				}, 300);
 				return false;
 			}
-		}
-	});
-
-	var distance = $('.site-title').offset().top;
-
-	$(window).scroll(function() {
-		
-		if ($(window).scrollTop() > distance) {
-			$('.site-title').addClass("fixed");
-		} else {
-			$('.site-title').removeClass("fixed");
 		}
 	});
 

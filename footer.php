@@ -16,6 +16,7 @@
 			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'onesie' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
 			<?php printf( __( 'Theme: %1$s by %2$s.', 'onesie' ), 'Onesie', '<a href="http://graphpaperpress.com" rel="designer">Graph Paper Press</a>' ); ?>
+			<a id="up" class="genericon genericon-collapse" href="#page" title="<?php _e( 'Back to top', 'onesie' ); ?>"></a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
