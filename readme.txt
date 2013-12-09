@@ -5,7 +5,7 @@ Onesie is a one page responsive portfolio landing page theme. Yep, just one page
 
 ### Not Included ###
 
-This is a one page landing page theme as mentioned in the description above. Thus, it doesn't contain amy templates for showing Posts or Pages. Otherwise, it wouldn't be a landing page theme after all, now would it? So here is what you cannot do with this theme:
+This is a one page landing page theme as mentioned in the description above. Thus, it doesn't contain any templates for showing Posts or Pages. Otherwise, it wouldn't be a landing page theme after all, now would it? So here is what you cannot do with this theme:
 
 1. You cannot show Posts or Pages
 2. You cannot create Menus. The menu is automatically created for you based on the options that you will fill in on the Theme Options page.
