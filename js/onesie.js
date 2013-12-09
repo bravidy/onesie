@@ -1,11 +1,13 @@
 jQuery(document).ready(function($){
 
+	// add mobile class for css targeting
 	if ($(window).width() < 600) {
 		$('body').addClass('mobile');
 	} else {
 		$('body').removeClass('mobile');
 	}
 	
+	// set height of blocks based on window height
 	var win_height = $(window).height() - 100;
 
 	if ( ! win_height )
@@ -13,6 +15,7 @@ jQuery(document).ready(function($){
 	
 	$('.block').css({ height: win_height });
 
+	// create anchor links
 	$('a[href*=#]:not([href=#])').click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 			var target = $(this.hash);
@@ -26,6 +29,7 @@ jQuery(document).ready(function($){
 		}
 	});
 
+	// magnific popup
 	$('.gallery-item').magnificPopup({
 		type: 'image',
 		gallery:{

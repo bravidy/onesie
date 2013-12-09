@@ -33,44 +33,14 @@ function onesie_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
-	//add_theme_support( 'post-thumbnails' );
-
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'onesie' ),
-	) );
-
-	// Enable support for Post Formats.
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
-
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'onesie_custom_background_args', array(
 		'default-color' => '000000',
-		'default-image' => get_template_directory_uri() . '/images/background-phone.jpg',
+		'default-image' => get_template_directory_uri() . '/images/background.jpg',
 	) ) );
 }
 endif; // onesie_setup
 add_action( 'after_setup_theme', 'onesie_setup' );
-
-/**
- * Register widgetized area and update sidebar with default widgets.
- */
-function onesie_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'onesie' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-}
-add_action( 'widgets_init', 'onesie_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
@@ -78,30 +48,14 @@ add_action( 'widgets_init', 'onesie_widgets_init' );
 function onesie_scripts() {
 	wp_enqueue_style( 'onesie-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'onesie-bootstrap-style', get_template_directory_uri() . '/css/bootstrap.css', array( 'onesie-style' ), '20131204', 'all' );
-	wp_enqueue_style( 'onesie-bootstrap-theme-style', get_template_directory_uri() . '/css/bootstrap-theme.css', array( 'onesie-style', 'onesie-bootstrap-style' ), '20131204', 'all' );
 	wp_enqueue_style( 'onesie-magnific-popup-style', get_template_directory_uri() . '/css/magnific-popup.css', array( 'onesie-style' ), '20131204', 'all' );
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', array( 'onesie-style' ), '20131204', 'all' );
 
 	wp_enqueue_script( 'onesie-magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.js', array( 'jquery' ), '20131210', true );
 	wp_enqueue_script( 'onesie-scripts', get_template_directory_uri() . '/js/onesie.js', array( 'jquery', 'onesie-magnific-popup' ), '20131210', true );
-	wp_enqueue_script( 'onesie-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'onesie-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'onesie_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.
