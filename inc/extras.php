@@ -50,3 +50,14 @@ function onesie_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'onesie_wp_title', 10, 2 );
+
+/**
+ * Get theme version number from WP_Theme object (cached)
+ *
+ * @since onesie 1.0
+*/
+function onesie_get_theme_version() {
+        $theme_file = get_template_directory() . '/style.css';
+        $theme = new WP_Theme( basename( dirname( $theme_file ) ), dirname( dirname( $theme_file ) ) );
+        return $theme->get( 'Version' );
+}

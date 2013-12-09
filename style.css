@@ -619,9 +619,6 @@ object {
 
 body.custom-background {
 	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: top left;
-	background-attachment: fixed;
 }
 .site {
 	width: 90%;
