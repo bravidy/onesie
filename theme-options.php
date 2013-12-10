@@ -107,6 +107,7 @@ $options = array(
         "since" => "1.0",
         "id" => "general_section_1",
         "type" => "textarea",
+        "sanitize" => "html",
         "default" => ""
     ),
     'button_link' => array(
@@ -118,6 +119,7 @@ $options = array(
         "since" => "1.0",
         "id" => "general_section_1",
         "type" => "text",
+        "sanitize" => "nohtml",
         "default" => site_url()
     ),
     'button_text' => array(
@@ -129,6 +131,7 @@ $options = array(
         "since" => "1.0",
         "id" => "general_section_1",
         "type" => "text",
+        "sanitize" => "nohtml",
         "default" => ""
     ),
     "about" => array(
@@ -152,6 +155,7 @@ $options = array(
         "since" => "1.0",
         "id" => "general_section_1",
         "type" => "textarea",
+        "sanitize" => "html",
         "default" => ""
     ),
     'color' => array(
