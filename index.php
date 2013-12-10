@@ -37,7 +37,10 @@
 
 			<h2 class="site-description">
 			<?php if ( ! empty( $options['message'] ) ) : ?>
-				<?php echo stripslashes_deep( $options['message'] ); ?>
+				<?php
+					$message = apply_filters('the_content', stripslashes_deep( $options['message'] ) );
+					echo $message;
+			?>
 			<?php else : ?>
 				<?php bloginfo( 'description' ); ?>
 			<?php endif; ?>
@@ -79,7 +82,7 @@
 
 					<ul class="gallery">
 
-					<?php 
+					<?php
 						foreach( $images as $id ) {
 
 							$attachment_caption = get_post_field( 'post_excerpt', $id );
@@ -107,14 +110,24 @@
 			<?php if ( ! empty( $options['about'] ) ) : ?>
 				<section id="about" class="block">
 					<h2 class="section-title"><?php _e( 'About', 'onesie' ); ?></h2>
-						<p class="lead"><?php echo stripslashes_deep( $options['about'] ); ?></p>
+						<div class="lead">
+							<?php
+								$about_info = apply_filters('the_content', stripslashes_deep( $options['about'] ) );
+								echo $about_info;
+							?>
+						</div>
 				</section>
 			<?php endif; ?>
-			
+
 			<?php if ( ! empty( $options['contact'] ) ) : ?>
 				<section id="contact" class="block">
 					<h2 class="section-title"><?php _e( 'Contact', 'onesie' ); ?></h2>
-						<p class="lead"><?php echo stripslashes_deep( $options['contact'] ); ?></p>
+					<div class="lead">
+						<?php
+							$contact_info = apply_filters('the_content', stripslashes_deep( $options['contact'] ) );
+							echo $contact_info;
+						?>
+					</div>
 				</section>
 			<?php endif; ?>
 
