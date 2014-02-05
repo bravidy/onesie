@@ -13,7 +13,7 @@ $general_settings_tab = array(
         "general_section_1" => array(
             "name" => "general_section_1",
             "title" => __( "General", "gpp" ),
-            "description" => __( "", "gpp" )
+            "description" => ""
         )
     )
 );
@@ -27,7 +27,7 @@ $colors_tab = array(
         "colors_section_1" => array(
             "name" => "colors_section_1",
             "title" => __( "Colors", "gpp" ),
-            "description" => __( "", "gpp" )
+            "description" => ""
         )
     )
 );
@@ -41,7 +41,7 @@ $portfolio_tab = array(
         "portfolio_section_1" => array(
             "name" => "portfolio_section_1",
             "title" => __( "Portfolio", "gpp" ),
-            "description" => __( "", "gpp" )
+            "description" => ""
         )
     )
 );
